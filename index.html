@@ -8,157 +8,200 @@
 <link rel="icon" href="images/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
+    --black:#101014;
+    --ink:#1c1c21;
+    --paper:#f4f2ec;
+    --white:#ffffff;
+    --gray:#6d6d74;
+    --red:#00a010;
+    --blue:#204080;
     --navy:#1c2130;
-    --navy-soft:#394660;
-    --accent:#b61629;
-    --bg:#fdfcf8;
-    --bg-alt:#f4f1ea;
-    --text:#2b2f3a;
-    --muted:#5c6270;
-    --line:#e3ded2;
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
+  *{margin:0;padding:0;box-sizing:border-box;border-radius:0 !important;}
   html{scroll-behavior:smooth;}
   body{
     font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
-    color:var(--text);
-    background:var(--bg);
-    line-height:1.9;
-    font-size:16px;
+    color:var(--ink);background:var(--white);
+    line-height:1.85;font-size:16px;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3,.mincho{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;}
+  .osw{font-family:"Oswald","Zen Kaku Gothic New",sans-serif;}
   img{display:block;max-width:100%;}
-  a{color:var(--navy);}
+  a{color:var(--ink);}
 
+  /* top bar */
   header{
     position:sticky;top:0;z-index:50;
-    background:rgba(253,252,248,.95);
-    border-bottom:1px solid var(--line);
-    backdrop-filter:blur(6px);
+    background:var(--black);color:#fff;
+    border-bottom:4px solid var(--red);
   }
   .header-inner{
-    max-width:1020px;margin:0 auto;padding:10px 20px;
-    display:flex;align-items:center;gap:14px;
+    max-width:1180px;margin:0 auto;padding:10px 20px;
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
   }
-  .header-inner img{width:40px;height:40px;border-radius:50%;}
-  .header-name{font-family:"Shippori Mincho",serif;font-weight:700;font-size:17px;color:var(--navy);letter-spacing:.04em;}
-  nav{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap;}
-  nav a{text-decoration:none;font-size:14px;color:var(--navy-soft);font-weight:500;}
-  nav a:hover{color:var(--accent);}
+  .brand{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.14em;font-size:15px;}
+  .brand b{color:var(--blue);font-weight:600;}
+  nav{margin-left:auto;display:flex;gap:20px;flex-wrap:wrap;}
+  nav a{color:#fff;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;}
+  nav a:hover{color:var(--red);}
 
-  .wrap{max-width:1020px;margin:0 auto;padding:0 20px;}
-  section{padding:72px 0;}
-  section.alt{background:var(--bg-alt);}
-  .sec-head{margin-bottom:40px;}
-  .sec-head .en{font-size:12px;letter-spacing:.28em;color:var(--accent);font-weight:700;text-transform:uppercase;}
-  .sec-head h2{font-size:30px;color:var(--navy);font-weight:600;letter-spacing:.06em;margin-top:4px;}
-  .sec-head p{color:var(--muted);margin-top:8px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px;}
 
   /* hero */
-  .hero{padding:64px 0 0;text-align:center;}
-  .hero .logo{width:148px;height:148px;margin:0 auto 20px;border-radius:50%;}
-  .hero h1{font-size:38px;font-weight:600;color:var(--navy);letter-spacing:.1em;}
-  .hero .tagline{margin-top:14px;font-size:17px;color:var(--navy-soft);}
-  .hero .sub{margin-top:6px;color:var(--muted);font-size:15px;}
-  .hero-band{
-    margin-top:44px;
-    display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;
+  .hero{border-bottom:2px solid var(--black);background:var(--white);overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:2.1fr 1fr;border-left:2px solid var(--black);border-right:2px solid var(--black);}
+  .hero-title{padding:44px 36px 30px;border-right:2px solid var(--black);position:relative;}
+  .corner{position:absolute;top:10px;left:12px;font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.24em;color:var(--gray);}
+  .hero-title .pre{font-weight:900;font-size:clamp(20px,3.4vw,30px);letter-spacing:.28em;color:var(--ink);}
+  .hero-title h1{
+    font-weight:900;font-size:clamp(84px,15vw,168px);line-height:1.02;
+    letter-spacing:.02em;color:var(--black);margin-top:2px;
   }
-  .hero-band img{width:100%;height:250px;object-fit:cover;border-radius:6px;}
+  .hero-title h1 .r{color:var(--blue);}
+  .hero-title .en{font-family:"Oswald",sans-serif;font-weight:500;font-size:clamp(15px,2.4vw,24px);letter-spacing:.34em;margin-top:10px;color:var(--ink);}
+  .hero-side{background:var(--black);color:#fff;padding:44px 30px 30px;position:relative;}
+  .hero-side .corner{color:#8b8b93;}
+  .hero-side .lead{font-size:19px;font-weight:700;line-height:2.0;}
+  .hero-side .sub{margin-top:14px;font-size:14px;color:#c9c9cf;line-height:1.9;}
+  .hero-side .addr{margin-top:20px;border-top:1px solid #3a3a41;padding-top:14px;font-family:"Oswald",sans-serif;letter-spacing:.12em;font-size:13px;color:#fff;}
+  .slogan{
+    background:var(--red);color:#fff;
+    transform:rotate(-1.6deg) scale(1.02);
+    margin:26px 0 8px;
+    padding:8px 0;text-align:center;
+    font-family:"Oswald",sans-serif;font-weight:600;
+    font-size:clamp(18px,3.6vw,32px);letter-spacing:.3em;white-space:nowrap;overflow:hidden;
+  }
+  .hero-photos{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:0;border:2px solid var(--black);border-top:none;}
+  .hero-photos figure{position:relative;border-right:2px solid var(--black);}
+  .hero-photos figure:last-child{border-right:none;}
+  .hero-photos img{width:100%;height:280px;object-fit:cover;}
+  .hero-photos figcaption{
+    position:absolute;left:0;bottom:0;background:var(--black);color:#fff;
+    font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.22em;padding:5px 10px;
+  }
+  .hero-photos .tall img{height:340px;}
+
+  /* sections */
+  section{padding:0;}
+  .sec{border-bottom:2px solid var(--black);}
+  .sec-head{display:flex;align-items:stretch;border-bottom:2px solid var(--black);}
+  .sec-head .no{
+    background:var(--red);color:#fff;font-family:"Oswald",sans-serif;font-weight:600;
+    font-size:clamp(22px,3.4vw,34px);padding:10px 18px;display:flex;align-items:center;letter-spacing:.06em;
+  }
+  .sec-head .tt{padding:12px 20px;}
+  .sec-head .en{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.3em;color:var(--gray);}
+  .sec-head h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;letter-spacing:.05em;color:var(--black);line-height:1.3;}
+  .sec-body{padding:40px 0 52px;}
+  .alt{background:var(--paper);}
 
   /* points */
-  .point{
-    display:flex;gap:28px;align-items:flex-start;
-    padding:30px 0;border-bottom:1px solid var(--line);
-  }
+  .point{display:grid;grid-template-columns:150px 1fr;gap:26px;padding:28px 0;border-bottom:1px solid #c9c6bb;}
   .point:last-child{border-bottom:none;}
-  .point img{width:118px;height:118px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
-  .point h3{font-size:20px;color:var(--navy);font-weight:600;letter-spacing:.04em;}
-  .point h3 .num{color:var(--accent);margin-right:10px;font-size:15px;letter-spacing:.1em;}
-  .point p{margin-top:8px;}
-  .point p + p{margin-top:6px;}
+  .point .num{font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(56px,8vw,88px);line-height:1;color:var(--black);}
+  .point .num span{color:var(--blue);}
+  .point h3{font-size:21px;font-weight:900;letter-spacing:.04em;color:var(--black);}
+  .point p{margin-top:6px;max-width:820px;}
 
   /* venues */
-  .venue{margin-bottom:44px;}
-  .venue h3{font-size:21px;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:14px;}
-  .venue h3 img{width:64px;height:64px;object-fit:contain;background:#fff;border-radius:8px;}
-  .venue .addr{margin-top:8px;}
-  .venue .photo{margin-top:18px;border-radius:6px;width:100%;max-height:440px;object-fit:cover;}
-  .map{margin-top:18px;border:0;width:100%;height:300px;border-radius:6px;}
+  .venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--black);}
+  .venue{padding:26px;position:relative;}
+  .venue + .venue{border-left:2px solid var(--black);}
+  .venue .corner{top:8px;left:10px;}
+  .venue h3{font-size:21px;font-weight:900;color:var(--black);margin-top:12px;}
+  .venue .photo{margin-top:16px;width:100%;height:230px;object-fit:cover;border:2px solid var(--black);}
+  .map{margin-top:16px;border:2px solid var(--black);width:100%;height:280px;}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px;}
+  .gallery img{width:100%;height:200px;object-fit:cover;border:2px solid var(--black);}
+  .gallery-cap{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.26em;color:var(--gray);margin-top:34px;}
+  .gallery-lead{font-weight:700;margin-top:4px;}
 
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px;}
-  .gallery img{width:100%;height:210px;object-fit:cover;border-radius:6px;}
-
-  /* fees */
-  .fee-box{display:flex;gap:28px;align-items:flex-start;}
-  .fee-box img{width:118px;height:118px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
-  .fee-list{font-size:18px;}
-  .fee-list .row{display:flex;gap:18px;padding:10px 0;border-bottom:1px solid var(--line);}
-  .fee-list .row:last-child{border-bottom:none;}
-  .fee-list .k{color:var(--muted);min-width:76px;}
-  .fee-list .v{font-weight:700;color:var(--navy);}
-  .included{margin-top:34px;}
-  .included h3{font-size:18px;color:var(--navy);margin-bottom:10px;}
+  /* fee */
+  .fee-grid{display:grid;grid-template-columns:repeat(3,1fr);border:2px solid var(--black);}
+  .fee-cell{padding:24px;position:relative;}
+  .fee-cell + .fee-cell{border-left:2px solid var(--black);}
+  .fee-cell .k{font-weight:700;letter-spacing:.1em;color:var(--gray);font-size:14px;}
+  .fee-cell .v{font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(36px,5.4vw,54px);color:var(--black);line-height:1.15;margin-top:4px;}
+  .fee-cell .v small{font-size:.42em;letter-spacing:.06em;}
+  .included{margin-top:30px;}
+  .included h3{font-size:18px;font-weight:900;margin-bottom:8px;}
   .included ul{list-style:none;}
-  .included li{padding:6px 0 6px 22px;position:relative;}
-  .included li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--navy-soft);}
+  .included li{padding:7px 0 7px 26px;position:relative;border-bottom:1px solid #d8d5cb;}
+  .included li:last-child{border-bottom:none;}
+  .included li::before{content:"";position:absolute;left:2px;top:17px;width:10px;height:10px;background:var(--red);}
 
   /* courses */
-  .course{display:flex;gap:24px;align-items:flex-start;padding:26px 0;border-bottom:1px solid var(--line);}
-  .course:last-child{border-bottom:none;}
-  .course img{width:104px;height:104px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
-  .course h3{font-size:19px;color:var(--navy);font-weight:600;letter-spacing:.03em;}
+  .course-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--black);}
+  .course{padding:26px;position:relative;border-bottom:2px solid var(--black);}
+  .course:nth-child(odd){border-right:2px solid var(--black);}
+  .course:nth-child(5){border-bottom:none;}
+  .course img{width:110px;height:110px;object-fit:contain;}
+  .course h3{font-size:20px;font-weight:900;color:var(--black);margin-top:12px;letter-spacing:.03em;}
   .course p{margin-top:6px;}
 
   /* instructor */
-  .inst-head{display:flex;gap:30px;align-items:center;}
-  .inst-head img{width:168px;height:168px;object-fit:cover;border-radius:8px;flex:none;}
-  .inst-head .name{font-size:26px;color:var(--navy);font-weight:600;letter-spacing:.05em;}
-  .inst-head .name .yomi{font-size:14px;color:var(--muted);margin-left:10px;letter-spacing:.08em;}
-  .inst-head .role{color:var(--navy-soft);font-weight:500;margin-top:2px;}
-  .inst-body{margin-top:26px;}
-  .inst-body p + p{margin-top:10px;}
-  .inst-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;}
-  .inst-photos figure img{width:100%;height:270px;object-fit:cover;border-radius:6px;}
-  .inst-photos figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center;}
-  .career{margin-top:30px;display:flex;gap:24px;align-items:flex-start;}
-  .career img{width:96px;height:96px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
-  .career h3{font-size:18px;color:var(--navy);margin-bottom:8px;}
+  .inst-grid{display:grid;grid-template-columns:300px 1fr;gap:0;border:2px solid var(--black);}
+  .inst-photo{border-right:2px solid var(--black);}
+  .inst-photo img{width:100%;height:100%;object-fit:cover;min-height:300px;}
+  .inst-main{padding:28px;position:relative;}
+  .inst-main .name{font-size:clamp(30px,4.6vw,44px);font-weight:900;color:var(--black);letter-spacing:.04em;line-height:1.25;}
+  .inst-main .name .yomi{font-size:14px;color:var(--gray);letter-spacing:.14em;margin-left:12px;font-weight:500;}
+  .inst-main .role{font-family:"Oswald",sans-serif;letter-spacing:.2em;font-size:13px;color:var(--blue);font-weight:600;margin-top:6px;}
+  .inst-main p{margin-top:14px;max-width:760px;}
+  .inst-photos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px;}
+  .inst-photos figure{position:relative;}
+  .inst-photos img{width:100%;height:250px;object-fit:cover;border:2px solid var(--black);}
+  .inst-photos figcaption{position:absolute;left:0;bottom:0;background:var(--black);color:#fff;font-size:12px;padding:4px 10px;letter-spacing:.1em;}
+  .career{margin-top:26px;border:2px solid var(--black);padding:24px 26px;position:relative;}
+  .career h3{font-size:18px;font-weight:900;margin-bottom:8px;}
 
   /* apply */
-  .apply{text-align:center;}
-  .apply img{width:104px;height:104px;object-fit:contain;margin:0 auto 14px;background:#fff;border-radius:8px;}
+  .apply-sec{background:var(--black);color:#fff;border-bottom:2px solid var(--black);}
+  .apply-sec .sec-head{border-bottom:2px solid #3a3a41;}
+  .apply-sec .sec-head .tt h2{color:#fff;}
+  .apply-inner{padding:44px 0 56px;text-align:left;}
+  .apply-inner .big{font-size:clamp(22px,3.6vw,32px);font-weight:900;line-height:1.6;letter-spacing:.04em;}
+  .apply-inner p{margin-top:12px;color:#c9c9cf;}
   .btn{
-    display:inline-block;margin-top:22px;
-    background:var(--navy);color:#fff;text-decoration:none;
-    padding:15px 44px;border-radius:999px;font-size:17px;font-weight:700;letter-spacing:.06em;
+    display:inline-block;margin-top:26px;background:var(--red);color:#fff;text-decoration:none;
+    padding:16px 46px;font-size:17px;font-weight:900;letter-spacing:.1em;border:2px solid var(--red);
   }
-  .btn:hover{background:var(--navy-soft);}
+  .btn:hover{background:#fff;color:var(--red);}
 
-  footer{background:var(--navy);color:#e9e7df;padding:38px 0;text-align:center;}
-  footer .fname{font-family:"Shippori Mincho",serif;font-size:18px;letter-spacing:.08em;}
-  footer .faddr{font-size:14px;color:#b9bcc7;margin-top:6px;}
-  footer .fcopy{font-size:13px;color:#b9bcc7;margin-top:10px;}
+  footer{background:var(--black);color:#fff;padding:30px 0 38px;}
+  footer .fbrand{font-family:"Oswald",sans-serif;letter-spacing:.2em;font-size:14px;}
+  footer .fbrand b{color:var(--blue);}
+  footer .fname{font-weight:900;font-size:19px;margin-top:8px;letter-spacing:.06em;}
+  footer .faddr{font-size:13px;color:#9a9aa2;margin-top:4px;}
+  footer .fcopy{font-size:13px;color:#9a9aa2;margin-top:10px;}
   footer .fcopy a{color:#fff;text-decoration:underline;}
 
-  @media (max-width:680px){
-    section{padding:52px 0;}
-    .hero h1{font-size:29px;}
-    .hero-band{grid-template-columns:1fr;}
-    .hero-band img{height:200px;}
-    .point{flex-direction:column;gap:14px;}
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-title{border-right:none;border-bottom:2px solid var(--black);padding:38px 22px 26px;}
+    .hero-photos{grid-template-columns:1fr;}
+    .hero-photos figure{border-right:none;border-bottom:2px solid var(--black);}
+    .hero-photos figure:last-child{border-bottom:none;}
+    .hero-photos img,.hero-photos .tall img{height:210px;}
+    .point{grid-template-columns:86px 1fr;gap:16px;}
+    .venue-grid{grid-template-columns:1fr;}
+    .venue + .venue{border-left:none;border-top:2px solid var(--black);}
     .gallery{grid-template-columns:1fr 1fr;}
-    .gallery img{height:150px;}
-    .fee-box{flex-direction:column;}
-    .inst-head{flex-direction:column;text-align:center;}
+    .gallery img{height:140px;}
+    .fee-grid{grid-template-columns:1fr;}
+    .fee-cell + .fee-cell{border-left:none;border-top:2px solid var(--black);}
+    .course-grid{grid-template-columns:1fr;}
+    .course:nth-child(odd){border-right:none;}
+    .course:nth-child(5){border-bottom:none;}
+    .inst-grid{grid-template-columns:1fr;}
+    .inst-photo{border-right:none;border-bottom:2px solid var(--black);}
+    .inst-photo img{min-height:0;height:260px;}
     .inst-photos{grid-template-columns:1fr;}
-    .career{flex-direction:column;}
-    nav{gap:14px;}
-    nav a{font-size:13px;}
+    nav{gap:12px;}
   }
 </style>
 </head>
@@ -166,10 +209,9 @@
 
 <header>
   <div class="header-inner">
-    <img src="images/logo.png" alt="シニアITサロンえーる ロゴ">
-    <div class="header-name">シニアITサロンえーる</div>
+    <div class="brand">SENIOR IT SALON <b>ERU</b></div>
     <nav>
-      <a href="#points">えーるの特徴</a>
+      <a href="#points">特徴</a>
       <a href="#guide">教室案内</a>
       <a href="#fee">料金</a>
       <a href="#course">講座内容</a>
@@ -181,211 +223,222 @@
 
 <div class="hero">
   <div class="wrap">
-    <img class="logo" src="images/logo.png" alt="シニアITサロンえーる ロゴ">
-    <h1>シニアITサロンえーる</h1>
-    <p class="tagline">スマホやパソコンの「困った」を、一緒に解決する教室です。</p>
-    <p class="sub">70代・80代の方を中心に、それぞれのペースで学べます。分からないところは、その場で何度でも聞けます。</p>
-    <div class="hero-band">
-      <img src="images/hero-classroom.jpg" alt="教室で学ぶ様子">
-      <img src="images/hero-smartphone.jpg" alt="スマートフォンを操作する手元">
-      <img src="images/hero-pc.jpg" alt="教室でパソコンを操作する様子">
+    <div class="hero-grid">
+      <div class="hero-title">
+        <div class="corner">KURE / HIROSHIMA</div>
+        <div class="pre">シニアITサロン</div>
+        <h1>えーる<span class="r">.</span></h1>
+        <div class="en">SENIOR IT SALON ERU</div>
+      </div>
+      <div class="hero-side">
+        <div class="corner">ABOUT</div>
+        <p class="lead">スマホやパソコンの「困った」を、一緒に解決する教室です。</p>
+        <p class="sub">70代・80代の方を中心に、それぞれのペースで学べます。分からないところは、その場で何度でも聞けます。</p>
+        <div class="addr">3-3 TERAMOTO-CHO, KURE, HIROSHIMA</div>
+      </div>
+    </div>
+    <div class="slogan">DIGITAL IS MY FRIEND!</div>
+    <div class="hero-photos">
+      <figure class="tall">
+        <img src="images/hero-classroom.jpg" alt="教室で学ぶ様子">
+        <figcaption>CLASSROOM</figcaption>
+      </figure>
+      <figure>
+        <img src="images/hero-smartphone.jpg" alt="スマートフォンを操作する手元">
+        <figcaption>SMARTPHONE</figcaption>
+      </figure>
+      <figure>
+        <img src="images/hero-pc.jpg" alt="教室でパソコンを操作する様子">
+        <figcaption>PERSONAL COMPUTER</figcaption>
+      </figure>
     </div>
   </div>
 </div>
 
-<section id="points">
+<section id="points" class="sec">
   <div class="wrap">
     <div class="sec-head">
-      <div class="en">Features</div>
-      <h2>えーるの5つのポイント</h2>
+      <div class="no">01</div>
+      <div class="tt"><div class="en">FEATURES</div><h2>えーるの5つのポイント</h2></div>
     </div>
-
-    <div class="point">
-      <img src="images/point-1.png" alt="授業のイラスト">
-      <div>
-        <h3><span class="num">POINT 1</span>講師による授業・クラス制</h3>
-        <p>ビデオや本を使っての自主学習形式ではなく、講師が授業を進めるクラス制だから、わからないところや質問したいところをすぐに聞いていただけます！</p>
-        <p>毎週受講していただく時間帯が決まっているので、予定も立てやすい。</p>
-        <p>ほかの受講生さんともパソコンを通して親睦が深まるのもクラス制ならでは！季節の折々に、お花見やお食事会、新年会なども開催されるので、楽しく受講していただけます。</p>
+    <div class="sec-body">
+      <div class="point">
+        <div class="num">0<span>1</span></div>
+        <div>
+          <h3>講師による授業・クラス制</h3>
+          <p>ビデオや本を使っての自主学習形式ではなく、講師が授業を進めるクラス制だから、わからないところや質問したいところをすぐに聞いていただけます！</p>
+          <p>毎週受講していただく時間帯が決まっているので、予定も立てやすい。ほかの受講生さんともパソコンを通して親睦が深まるのもクラス制ならでは！季節の折々に、お花見やお食事会、新年会なども開催されるので、楽しく受講していただけます。</p>
+        </div>
       </div>
-    </div>
-
-    <div class="point">
-      <img src="images/point-2.png" alt="月会費制のイラスト">
-      <div>
-        <h3><span class="num">POINT 2</span>安心の月会費制</h3>
-        <p>お支払い料金は各月ごとの月会費制です（13,500円＋テキスト代）。</p>
-        <p>週1回の授業に加え、授業の振替や再受講（1回）もでき、上記以上の金額をいただくことはありません。</p>
+      <div class="point">
+        <div class="num">0<span>2</span></div>
+        <div>
+          <h3>安心の月会費制</h3>
+          <p>お支払い料金は各月ごとの月会費制です（13,500円＋テキスト代）。週1回の授業に加え、授業の振替や再受講（1回）もでき、上記以上の金額をいただくことはありません。</p>
+        </div>
       </div>
-    </div>
-
-    <div class="point">
-      <img src="images/point-3.png" alt="振替・再受講のイラスト">
-      <div>
-        <h3><span class="num">POINT 3</span>振替・再受講</h3>
-        <p>忙しくて、受講できるかどうか心配・・・そんな方のための安心の受講システム。</p>
-        <p>＜振替＞基本クラスに都合が悪くて出席できない場合、同じ内容を行っている他のクラスがある場合は、そのクラスに振替えて受講していただけます。</p>
-        <p>＜再受講＞過去に受講した授業をもう一度受けられます（再受講は1回）。</p>
+      <div class="point">
+        <div class="num">0<span>3</span></div>
+        <div>
+          <h3>振替・再受講</h3>
+          <p>忙しくて、受講できるかどうか心配・・・そんな方のための安心の受講システム。</p>
+          <p>＜振替＞基本クラスに都合が悪くて出席できない場合、同じ内容を行っている他のクラスがある場合は、そのクラスに振替えて受講していただけます。＜再受講＞過去に受講した授業をもう一度受けられます（再受講は1回）。</p>
+        </div>
       </div>
-    </div>
-
-    <div class="point">
-      <img src="images/point-4.png" alt="サポートのイラスト">
-      <div>
-        <h3><span class="num">POINT 4</span>メッセージ・電話サポート</h3>
-        <p>内容についていけるか心配・・・そんな方のために、こんなシステムもあります。</p>
-        <p>＜個別サポート＞事前にご相談いただければ個人的な問題にも対応します。町内会の経理・スマホ操作など授業の前や後の空き時間での質問も可能です。</p>
-        <p>＜電話問合せ＞ご自宅で復習していてわからない！エラーメッセージが出て動かない！そんな時はお電話でお問い合わせいただけます（授業中以外の時間）。</p>
-        <p>＜オンライン学習＞Zoomを使った質問対応も可能です（事前申し出のみ）。</p>
+      <div class="point">
+        <div class="num">0<span>4</span></div>
+        <div>
+          <h3>メッセージ・電話サポート</h3>
+          <p>内容についていけるか心配・・・そんな方のために、こんなシステムもあります。</p>
+          <p>＜個別サポート＞事前にご相談いただければ個人的な問題にも対応します。町内会の経理・スマホ操作など授業の前や後の空き時間での質問も可能です。＜電話問合せ＞ご自宅で復習していてわからない！エラーメッセージが出て動かない！そんな時はお電話でお問い合わせいただけます（授業中以外の時間）。＜オンライン学習＞Zoomを使った質問対応も可能です（事前申し出のみ）。</p>
+        </div>
       </div>
-    </div>
-
-    <div class="point">
-      <img src="images/point-5.png" alt="復習のイラスト">
-      <div>
-        <h3><span class="num">POINT 5</span>復習を前提にした授業組み立て</h3>
-        <p>一度ですべてを覚えようと思わなくても大丈夫。「忘れて当たり前」を前提に何度も繰り返すような授業内容にしています。その代わり、学習内容は多岐に渡ります。IT社会を楽しく便利に過ごすための内容です。</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="guide" class="alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="en">Access</div>
-      <h2>教室案内</h2>
-    </div>
-
-    <div class="venue">
-      <h3><img src="images/ill-venue.png" alt="会場のイラスト">シニアスクール村井内（主会場）</h3>
-      <p class="addr">広島県呉市寺本町3-3<br>講習会は水曜日・木曜日・土曜日に開いています。</p>
-      <img class="photo" src="images/classroom-interior.jpg" alt="主会場の教室の様子">
-      <iframe class="map" title="シニアスクール村井内の地図" src="https://www.google.com/maps?q=%E3%82%B7%E3%83%8B%E3%82%A2%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%ABMURAI%20%E5%91%89%E5%B8%82&z=16&output=embed" loading="lazy"></iframe>
-    </div>
-
-    <div class="venue">
-      <h3>豊まちづくりセンター</h3>
-      <p class="addr">隔週の金曜日、13時から開いています。</p>
-      <iframe class="map" title="豊まちづくりセンターの地図" src="https://www.google.com/maps?q=%E8%B1%8A%E3%81%BE%E3%81%A1%E3%81%A5%E3%81%8F%E3%82%8A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%91%89%E5%B8%82&output=embed" loading="lazy"></iframe>
-    </div>
-
-    <div class="sec-head" style="margin-top:56px;">
-      <h2 style="font-size:24px;">講座の様子</h2>
-      <p>生徒さんとスマホカメラ講座をした時の様子です。</p>
-    </div>
-    <div class="gallery">
-      <img src="images/gallery-1.jpg" alt="スマホカメラ講座の様子1">
-      <img src="images/gallery-2.jpg" alt="スマホカメラ講座の様子2">
-      <img src="images/gallery-3.jpg" alt="スマホカメラ講座の様子3">
-      <img src="images/gallery-4.jpg" alt="スマホカメラ講座の様子4">
-      <img src="images/gallery-5.jpg" alt="スマホカメラ講座の様子5">
-      <img src="images/gallery-6.jpg" alt="スマホカメラ講座の様子6">
-    </div>
-  </div>
-</section>
-
-<section id="fee">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="en">Fee</div>
-      <h2>料金</h2>
-    </div>
-    <div class="fee-box">
-      <img src="images/ill-fee.png" alt="料金のイラスト">
-      <div class="fee-list">
-        <div class="row"><div class="k">入会料</div><div class="v">5,000円</div></div>
-        <div class="row"><div class="k">月会費</div><div class="v">13,500円</div></div>
-        <div class="row"><div class="k">テキスト代</div><div class="v">実費</div></div>
-      </div>
-    </div>
-    <div class="included">
-      <h3>月会費には、次が含まれます</h3>
-      <ul>
-        <li>月に4回の講習会への参加</li>
-        <li>特別講習への参加</li>
-        <li>SNSやグループLINEでの、セキュリティ情報や緊急情報の共有</li>
-        <li>電話やメッセージでのサポート</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="course" class="alt">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="en">Courses</div>
-      <h2>講座内容</h2>
-    </div>
-    <div class="course">
-      <img src="images/ill3-smartphone.png" alt="スマホ講座のイラスト">
-      <div>
-        <h3>スマホの使い方</h3>
-        <p>電話やメール、LINEのやり取りから、カメラでの写真撮影、アプリの入れ方まで。日々の暮らしでよく使う操作を、ご自分のスマホで練習します。QRコードの読み取りや、地図・乗り換えの調べ方など、外出先で役立つ使い方も取り上げます。</p>
-      </div>
-    </div>
-    <div class="course">
-      <img src="images/ill3-pc.png" alt="パソコン講座のイラスト">
-      <div>
-        <h3>パソコンでの文書作成</h3>
-        <p>Wordでの文書作りと、Excelでの表計算が中心です。町内会のお知らせや名簿、家計の記録など、暮らしの中で実際に使う文書を作りながら覚えます。作った文書の印刷や、ファイルの整理の仕方もあわせて学びます。</p>
-      </div>
-    </div>
-    <div class="course">
-      <img src="images/ill3-postcard.png" alt="年賀状作りのイラスト">
-      <div>
-        <h3>Canvaで作る年賀状やチラシ</h3>
-        <p>無料のデザインツール「Canva」を使って、年賀状やチラシ、写真入りのカードを作ります。写真の選び方や文字の置き方など、見栄えよく仕上げるコツも一緒に練習します。</p>
-      </div>
-    </div>
-    <div class="course">
-      <img src="images/ill3-ai.png" alt="AI講座のイラスト">
-      <div>
-        <h3>AIの使い方</h3>
-        <p>話題のAIに、質問したり、文章作りを手伝ってもらったりする使い方を学ぶ講座です。旅行の計画や献立の相談など、暮らしの中で役立つ頼み方のコツを取り上げます。AIの答えをそのまま信じないための注意点も、あわせて確認します。</p>
-      </div>
-    </div>
-    <div class="course">
-      <img src="images/ill3-security.png" alt="セキュリティ講座のイラスト">
-      <div>
-        <h3>セキュリティ対策</h3>
-        <p>詐欺のメールや偽のサイト、怪しい電話から身を守る方法を学びます。パスワードの作り方と管理、スマートフォンやパソコンの設定の見直しなど、今日からできる対策を中心に取り上げます。</p>
+      <div class="point">
+        <div class="num">0<span>5</span></div>
+        <div>
+          <h3>復習を前提にした授業組み立て</h3>
+          <p>一度ですべてを覚えようと思わなくても大丈夫。「忘れて当たり前」を前提に何度も繰り返すような授業内容にしています。その代わり、学習内容は多岐に渡ります。IT社会を楽しく便利に過ごすための内容です。</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="instructor">
+<section id="guide" class="sec alt">
   <div class="wrap">
     <div class="sec-head">
-      <div class="en">Instructor</div>
-      <h2>講師紹介</h2>
+      <div class="no">02</div>
+      <div class="tt"><div class="en">ACCESS</div><h2>教室案内</h2></div>
     </div>
-    <div class="inst-head">
-      <img src="images/instructor.jpg" alt="講師 井上由美の写真">
-      <div>
-        <div class="name">井上 由美<span class="yomi">いのうえ ゆみ</span></div>
-        <div class="role">シニアITサロンえーる 講師</div>
+    <div class="sec-body">
+      <div class="venue-grid">
+        <div class="venue">
+          <div class="corner">MAIN VENUE</div>
+          <h3>シニアスクール村井内（主会場）</h3>
+          <p>広島県呉市寺本町3-3<br>講習会は水曜日・木曜日・土曜日に開いています。</p>
+          <img class="photo" src="images/classroom-interior.jpg" alt="主会場の教室の様子">
+          <iframe class="map" title="シニアスクール村井内の地図" src="https://www.google.com/maps?q=%E3%82%B7%E3%83%8B%E3%82%A2%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%ABMURAI%20%E5%91%89%E5%B8%82&z=16&output=embed" loading="lazy"></iframe>
+        </div>
+        <div class="venue">
+          <div class="corner">SECOND VENUE</div>
+          <h3>豊まちづくりセンター</h3>
+          <p>隔週の金曜日、13時から開いています。</p>
+          <iframe class="map" title="豊まちづくりセンターの地図" src="https://www.google.com/maps?q=%E8%B1%8A%E3%81%BE%E3%81%A1%E3%81%A5%E3%81%8F%E3%82%8A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%91%89%E5%B8%82&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="gallery-cap">LESSON SCENES</div>
+      <p class="gallery-lead">講座の様子 ― 生徒さんとスマホカメラ講座をした時の様子です。</p>
+      <div class="gallery">
+        <img src="images/gallery-1.jpg" alt="スマホカメラ講座の様子1">
+        <img src="images/gallery-2.jpg" alt="スマホカメラ講座の様子2">
+        <img src="images/gallery-3.jpg" alt="スマホカメラ講座の様子3">
+        <img src="images/gallery-4.jpg" alt="スマホカメラ講座の様子4">
+        <img src="images/gallery-5.jpg" alt="スマホカメラ講座の様子5">
+        <img src="images/gallery-6.jpg" alt="スマホカメラ講座の様子6">
       </div>
     </div>
-    <div class="inst-body">
-      <p>IT講師として16年、延べ1万人以上（推計）の方に、パソコンとスマートフォンの使い方を教えてきました。</p>
-      <p>授業は講師が進めるクラス制で、分からないところはその場で聞いていただけます。「忘れて当たり前」を前提に、何度も繰り返しながら進める授業です。</p>
+  </div>
+</section>
+
+<section id="fee" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="no">03</div>
+      <div class="tt"><div class="en">FEE</div><h2>料金</h2></div>
     </div>
-    <div class="inst-photos">
-      <figure>
-        <img src="images/lecture-yumi.jpg" alt="講習会で指導する様子">
-        <figcaption>講習会で指導する様子</figcaption>
-      </figure>
-      <figure>
-        <img src="images/lecture-external.jpg" alt="外部講習の様子">
-        <figcaption>外部講習の様子</figcaption>
-      </figure>
+    <div class="sec-body">
+      <div class="fee-grid">
+        <div class="fee-cell"><div class="k">入会料</div><div class="v"><small>¥</small>5,000</div></div>
+        <div class="fee-cell"><div class="k">月会費</div><div class="v"><small>¥</small>13,500</div></div>
+        <div class="fee-cell"><div class="k">テキスト代</div><div class="v">実費</div></div>
+      </div>
+      <div class="included">
+        <h3>月会費には、次が含まれます</h3>
+        <ul>
+          <li>月に4回の講習会への参加</li>
+          <li>特別講習への参加</li>
+          <li>SNSやグループLINEでの、セキュリティ情報や緊急情報の共有</li>
+          <li>電話やメッセージでのサポート</li>
+        </ul>
+      </div>
     </div>
-    <div class="career">
-      <img src="images/ill-book.png" alt="経歴のイラスト">
-      <div>
+  </div>
+</section>
+
+<section id="course" class="sec alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="no">04</div>
+      <div class="tt"><div class="en">COURSES</div><h2>講座内容</h2></div>
+    </div>
+    <div class="sec-body">
+      <div class="course-grid">
+        <div class="course">
+          <div class="corner">C-01</div>
+          <img src="images/ill3-smartphone.png" alt="スマホ講座のイラスト">
+          <h3>スマホの使い方</h3>
+          <p>電話やメール、LINEのやり取りから、カメラでの写真撮影、アプリの入れ方まで。日々の暮らしでよく使う操作を、ご自分のスマホで練習します。QRコードの読み取りや、地図・乗り換えの調べ方など、外出先で役立つ使い方も取り上げます。</p>
+        </div>
+        <div class="course">
+          <div class="corner">C-02</div>
+          <img src="images/ill3-pc.png" alt="パソコン講座のイラスト">
+          <h3>パソコンでの文書作成</h3>
+          <p>Wordでの文書作りと、Excelでの表計算が中心です。町内会のお知らせや名簿、家計の記録など、暮らしの中で実際に使う文書を作りながら覚えます。作った文書の印刷や、ファイルの整理の仕方もあわせて学びます。</p>
+        </div>
+        <div class="course">
+          <div class="corner">C-03</div>
+          <img src="images/ill3-postcard.png" alt="年賀状作りのイラスト">
+          <h3>Canvaで作る年賀状やチラシ</h3>
+          <p>無料のデザインツール「Canva」を使って、年賀状やチラシ、写真入りのカードを作ります。写真の選び方や文字の置き方など、見栄えよく仕上げるコツも一緒に練習します。</p>
+        </div>
+        <div class="course">
+          <div class="corner">C-04</div>
+          <img src="images/ill3-ai.png" alt="AI講座のイラスト">
+          <h3>AIの使い方</h3>
+          <p>話題のAIに、質問したり、文章作りを手伝ってもらったりする使い方を学ぶ講座です。旅行の計画や献立の相談など、暮らしの中で役立つ頼み方のコツを取り上げます。AIの答えをそのまま信じないための注意点も、あわせて確認します。</p>
+        </div>
+        <div class="course">
+          <div class="corner">C-05</div>
+          <img src="images/ill3-security.png" alt="セキュリティ講座のイラスト">
+          <h3>セキュリティ対策</h3>
+          <p>詐欺のメールや偽のサイト、怪しい電話から身を守る方法を学びます。パスワードの作り方と管理、スマートフォンやパソコンの設定の見直しなど、今日からできる対策を中心に取り上げます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="instructor" class="sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="no">05</div>
+      <div class="tt"><div class="en">INSTRUCTOR</div><h2>講師紹介</h2></div>
+    </div>
+    <div class="sec-body">
+      <div class="inst-grid">
+        <div class="inst-photo">
+          <img src="images/instructor.jpg" alt="講師 井上由美の写真">
+        </div>
+        <div class="inst-main">
+          <div class="corner">PROFILE</div>
+          <div class="name">井上 由美<span class="yomi">いのうえ ゆみ</span></div>
+          <div class="role">INSTRUCTOR — SENIOR IT SALON ERU</div>
+          <p>IT講師として16年、延べ1万人以上（推計）の方に、パソコンとスマートフォンの使い方を教えてきました。</p>
+          <p>授業は講師が進めるクラス制で、分からないところはその場で聞いていただけます。「忘れて当たり前」を前提に、何度も繰り返しながら進める授業です。</p>
+        </div>
+      </div>
+      <div class="inst-photos">
+        <figure>
+          <img src="images/lecture-yumi.jpg" alt="講習会で指導する様子">
+          <figcaption>講習会で指導する様子</figcaption>
+        </figure>
+        <figure>
+          <img src="images/lecture-external.jpg" alt="外部講習の様子">
+          <figcaption>外部講習の様子</figcaption>
+        </figure>
+      </div>
+      <div class="career">
+        <div class="corner">CAREER</div>
         <h3>経歴</h3>
         <p>島根大学大学院 農学研究科を2000年3月に修了。<br>
         合同会社よーそろの専務執行役員として、WebサイトやSNSの運営など、デジタルの仕事全般も担当しています。<br>
@@ -396,25 +449,28 @@
   </div>
 </section>
 
-<section id="apply" class="alt">
+<section id="apply" class="apply-sec">
   <div class="wrap">
-    <div class="sec-head" style="text-align:center;">
-      <div class="en">Apply</div>
-      <h2>申し込み</h2>
+    <div class="sec-head">
+      <div class="no">06</div>
+      <div class="tt"><div class="en">APPLY</div><h2>申し込み</h2></div>
     </div>
-    <div class="apply">
-      <img src="images/ill-mail.png" alt="申し込みのイラスト">
-      <p>申し込みはフォームから受け付けています。<br>見学の相談も、フォームからどうぞ。</p>
+    <div class="apply-inner">
+      <div class="big">申し込みは、フォームから。</div>
+      <p>見学の相談も、フォームからどうぞ。</p>
       <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdOR7V6lVIGOyHAZFvg3BSPB8B1rAujKCPoIDZVn5l9SHzxSA/viewform" target="_blank" rel="noopener">申し込みフォームへ</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="fname">シニアITサロンえーる</div>
-  <div class="faddr">呉市寺本町3-3 シニアスクール村井内</div>
-  <div class="fcopy">運営：<a href="https://yosoro.com" target="_blank" rel="noopener">合同会社よーそろ</a></div>
-  <div class="fcopy">© 2026 合同会社よーそろ</div>
+  <div class="wrap">
+    <div class="fbrand">SENIOR IT SALON <b>ERU</b></div>
+    <div class="fname">シニアITサロンえーる</div>
+    <div class="faddr">呉市寺本町3-3 シニアスクール村井内</div>
+    <div class="fcopy">運営：<a href="https://yosoro.com" target="_blank" rel="noopener">合同会社よーそろ</a></div>
+    <div class="fcopy">© 2026 合同会社よーそろ</div>
+  </div>
 </footer>
 
 </body>
