@@ -108,10 +108,11 @@
   .included li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--navy-soft);}
 
   /* courses */
-  .course{display:flex;gap:24px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);}
+  .course{display:flex;gap:24px;align-items:flex-start;padding:26px 0;border-bottom:1px solid var(--line);}
   .course:last-child{border-bottom:none;}
-  .course img{width:96px;height:96px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
-  .course p{font-size:17px;}
+  .course img{width:104px;height:104px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
+  .course h3{font-size:19px;color:var(--navy);font-weight:600;letter-spacing:.03em;}
+  .course p{margin-top:6px;}
 
   /* instructor */
   .inst-head{display:flex;gap:30px;align-items:center;}
@@ -259,7 +260,7 @@
       <h3><img src="images/ill-venue.png" alt="会場のイラスト">シニアスクール村井内（主会場）</h3>
       <p class="addr">広島県呉市寺本町3-3<br>講習会は水曜日・木曜日・土曜日に開いています。</p>
       <img class="photo" src="images/classroom-interior.jpg" alt="主会場の教室の様子">
-      <iframe class="map" title="シニアスクール村井内の地図" src="https://www.google.com/maps?q=%E5%B9%83%E5%B3%B6%E7%9C%8C%E5%91%89%E5%B8%82%E5%AF%BA%E6%9C%AC%E7%94%BA3-3&output=embed" loading="lazy"></iframe>
+      <iframe class="map" title="シニアスクール村井内の地図" src="https://www.google.com/maps?q=%E3%82%B7%E3%83%8B%E3%82%A2%E3%82%B9%E3%82%AF%E3%83%BC%E3%83%ABMURAI%20%E5%91%89%E5%B8%82&z=16&output=embed" loading="lazy"></iframe>
     </div>
 
     <div class="venue">
@@ -316,24 +317,39 @@
       <h2>講座内容</h2>
     </div>
     <div class="course">
-      <img src="images/ill-smartphone.png" alt="スマホ講座のイラスト">
-      <p>スマホの基本操作と、よく使うアプリの使い方</p>
+      <img src="images/ill3-smartphone.png" alt="スマホ講座のイラスト">
+      <div>
+        <h3>スマホの使い方</h3>
+        <p>電話やメール、LINEのやり取りから、カメラでの写真撮影、アプリの入れ方まで。日々の暮らしでよく使う操作を、ご自分のスマホで練習します。QRコードの読み取りや、地図・乗り換えの調べ方など、外出先で役立つ使い方も取り上げます。</p>
+      </div>
     </div>
     <div class="course">
-      <img src="images/ill-pc.png" alt="パソコン講座のイラスト">
-      <p>パソコンでの文書作成（Word・Excel）</p>
+      <img src="images/ill3-pc.png" alt="パソコン講座のイラスト">
+      <div>
+        <h3>パソコンでの文書作成</h3>
+        <p>Wordでの文書作りと、Excelでの表計算が中心です。町内会のお知らせや名簿、家計の記録など、暮らしの中で実際に使う文書を作りながら覚えます。作った文書の印刷や、ファイルの整理の仕方もあわせて学びます。</p>
+      </div>
     </div>
     <div class="course">
-      <img src="images/ill-postcard.png" alt="年賀状作りのイラスト">
-      <p>Canvaで作る年賀状やチラシ</p>
+      <img src="images/ill3-postcard.png" alt="年賀状作りのイラスト">
+      <div>
+        <h3>Canvaで作る年賀状やチラシ</h3>
+        <p>無料のデザインツール「Canva」を使って、年賀状やチラシ、写真入りのカードを作ります。写真の選び方や文字の置き方など、見栄えよく仕上げるコツも一緒に練習します。</p>
+      </div>
     </div>
     <div class="course">
-      <img src="images/ill-ai.png" alt="AI講座のイラスト">
-      <p>AIの使い方</p>
+      <img src="images/ill3-ai.png" alt="AI講座のイラスト">
+      <div>
+        <h3>AIの使い方</h3>
+        <p>話題のAIに、質問したり、文章作りを手伝ってもらったりする使い方を学ぶ講座です。旅行の計画や献立の相談など、暮らしの中で役立つ頼み方のコツを取り上げます。AIの答えをそのまま信じないための注意点も、あわせて確認します。</p>
+      </div>
     </div>
     <div class="course">
-      <img src="images/ill-security.png" alt="セキュリティ講座のイラスト">
-      <p>詐欺や情報漏えいから身を守る、セキュリティ対策</p>
+      <img src="images/ill3-security.png" alt="セキュリティ講座のイラスト">
+      <div>
+        <h3>セキュリティ対策</h3>
+        <p>詐欺のメールや偽のサイト、怪しい電話から身を守る方法を学びます。パスワードの作り方と管理、スマートフォンやパソコンの設定の見直しなど、今日からできる対策を中心に取り上げます。</p>
+      </div>
     </div>
   </div>
 </section>
