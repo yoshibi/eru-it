@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>シニアITサロンえーる｜呉市のスマホ・パソコン教室</title>
+<meta name="description" content="広島県呉市のシニア向けIT教室。スマホやパソコンの「困った」を、講師が進めるクラス制の授業で一緒に解決します。">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1c2130;
+    --navy-soft:#394660;
+    --accent:#b61629;
+    --bg:#fdfcf8;
+    --bg-alt:#f4f1ea;
+    --text:#2b2f3a;
+    --muted:#5c6270;
+    --line:#e3ded2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.9;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.mincho{font-family:"Shippori Mincho","Hiragino Mincho ProN",serif;}
+  img{display:block;max-width:100%;}
+  a{color:var(--navy);}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(253,252,248,.95);
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(6px);
+  }
+  .header-inner{
+    max-width:1020px;margin:0 auto;padding:10px 20px;
+    display:flex;align-items:center;gap:14px;
+  }
+  .header-inner img{width:40px;height:40px;border-radius:50%;}
+  .header-name{font-family:"Shippori Mincho",serif;font-weight:700;font-size:17px;color:var(--navy);letter-spacing:.04em;}
+  nav{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap;}
+  nav a{text-decoration:none;font-size:14px;color:var(--navy-soft);font-weight:500;}
+  nav a:hover{color:var(--accent);}
+
+  .wrap{max-width:1020px;margin:0 auto;padding:0 20px;}
+  section{padding:72px 0;}
+  section.alt{background:var(--bg-alt);}
+  .sec-head{margin-bottom:40px;}
+  .sec-head .en{font-size:12px;letter-spacing:.28em;color:var(--accent);font-weight:700;text-transform:uppercase;}
+  .sec-head h2{font-size:30px;color:var(--navy);font-weight:600;letter-spacing:.06em;margin-top:4px;}
+  .sec-head p{color:var(--muted);margin-top:8px;}
+
+  /* hero */
+  .hero{padding:64px 0 0;text-align:center;}
+  .hero .logo{width:148px;height:148px;margin:0 auto 20px;border-radius:50%;}
+  .hero h1{font-size:38px;font-weight:600;color:var(--navy);letter-spacing:.1em;}
+  .hero .tagline{margin-top:14px;font-size:17px;color:var(--navy-soft);}
+  .hero .sub{margin-top:6px;color:var(--muted);font-size:15px;}
+  .hero-band{
+    margin-top:44px;
+    display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;
+  }
+  .hero-band img{width:100%;height:250px;object-fit:cover;border-radius:6px;}
+
+  /* points */
+  .point{
+    display:flex;gap:28px;align-items:flex-start;
+    padding:30px 0;border-bottom:1px solid var(--line);
+  }
+  .point:last-child{border-bottom:none;}
+  .point img{width:118px;height:118px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
+  .point h3{font-size:20px;color:var(--navy);font-weight:600;letter-spacing:.04em;}
+  .point h3 .num{color:var(--accent);margin-right:10px;font-size:15px;letter-spacing:.1em;}
+  .point p{margin-top:8px;}
+  .point p + p{margin-top:6px;}
+
+  /* venues */
+  .venue{margin-bottom:44px;}
+  .venue h3{font-size:21px;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:14px;}
+  .venue h3 img{width:64px;height:64px;object-fit:contain;background:#fff;border-radius:8px;}
+  .venue .addr{margin-top:8px;}
+  .venue .photo{margin-top:18px;border-radius:6px;width:100%;max-height:440px;object-fit:cover;}
+  .map{margin-top:18px;border:0;width:100%;height:300px;border-radius:6px;}
+
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px;}
+  .gallery img{width:100%;height:210px;object-fit:cover;border-radius:6px;}
+
+  /* fees */
+  .fee-box{display:flex;gap:28px;align-items:flex-start;}
+  .fee-box img{width:118px;height:118px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
+  .fee-list{font-size:18px;}
+  .fee-list .row{display:flex;gap:18px;padding:10px 0;border-bottom:1px solid var(--line);}
+  .fee-list .row:last-child{border-bottom:none;}
+  .fee-list .k{color:var(--muted);min-width:76px;}
+  .fee-list .v{font-weight:700;color:var(--navy);}
+  .included{margin-top:34px;}
+  .included h3{font-size:18px;color:var(--navy);margin-bottom:10px;}
+  .included ul{list-style:none;}
+  .included li{padding:6px 0 6px 22px;position:relative;}
+  .included li::before{content:"";position:absolute;left:2px;top:16px;width:8px;height:8px;border-radius:50%;background:var(--navy-soft);}
+
+  /* courses */
+  .course{display:flex;gap:24px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);}
+  .course:last-child{border-bottom:none;}
+  .course img{width:96px;height:96px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
+  .course p{font-size:17px;}
+
+  /* instructor */
+  .inst-head{display:flex;gap:30px;align-items:center;}
+  .inst-head img{width:168px;height:168px;object-fit:cover;border-radius:8px;flex:none;}
+  .inst-head .name{font-size:26px;color:var(--navy);font-weight:600;letter-spacing:.05em;}
+  .inst-head .name .yomi{font-size:14px;color:var(--muted);margin-left:10px;letter-spacing:.08em;}
+  .inst-head .role{color:var(--navy-soft);font-weight:500;margin-top:2px;}
+  .inst-body{margin-top:26px;}
+  .inst-body p + p{margin-top:10px;}
+  .inst-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px;}
+  .inst-photos figure img{width:100%;height:270px;object-fit:cover;border-radius:6px;}
+  .inst-photos figcaption{font-size:13px;color:var(--muted);margin-top:6px;text-align:center;}
+  .career{margin-top:30px;display:flex;gap:24px;align-items:flex-start;}
+  .career img{width:96px;height:96px;object-fit:contain;flex:none;background:#fff;border-radius:8px;}
+  .career h3{font-size:18px;color:var(--navy);margin-bottom:8px;}
+
+  /* apply */
+  .apply{text-align:center;}
+  .apply img{width:104px;height:104px;object-fit:contain;margin:0 auto 14px;background:#fff;border-radius:8px;}
+  .btn{
+    display:inline-block;margin-top:22px;
+    background:var(--navy);color:#fff;text-decoration:none;
+    padding:15px 44px;border-radius:999px;font-size:17px;font-weight:700;letter-spacing:.06em;
+  }
+  .btn:hover{background:var(--navy-soft);}
+
+  footer{background:var(--navy);color:#e9e7df;padding:38px 0;text-align:center;}
+  footer .fname{font-family:"Shippori Mincho",serif;font-size:18px;letter-spacing:.08em;}
+  footer .faddr{font-size:14px;color:#b9bcc7;margin-top:6px;}
+
+  @media (max-width:680px){
+    section{padding:52px 0;}
+    .hero h1{font-size:29px;}
+    .hero-band{grid-template-columns:1fr;}
+    .hero-band img{height:200px;}
+    .point{flex-direction:column;gap:14px;}
+    .gallery{grid-template-columns:1fr 1fr;}
+    .gallery img{height:150px;}
+    .fee-box{flex-direction:column;}
+    .inst-head{flex-direction:column;text-align:center;}
+    .inst-photos{grid-template-columns:1fr;}
+    .career{flex-direction:column;}
+    nav{gap:14px;}
+    nav a{font-size:13px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="images/logo.png" alt="シニアITサロンえーる ロゴ">
+    <div class="header-name">シニアITサロンえーる</div>
+    <nav>
+      <a href="#points">えーるの特徴</a>
+      <a href="#guide">教室案内</a>
+      <a href="#fee">料金</a>
+      <a href="#course">講座内容</a>
+      <a href="#instructor">講師紹介</a>
+      <a href="#apply">申し込み</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <img class="logo" src="images/logo.png" alt="シニアITサロンえーる ロゴ">
+    <h1>シニアITサロンえーる</h1>
+    <p class="tagline">スマホやパソコンの「困った」を、一緒に解決する教室です。</p>
+    <p class="sub">70代・80代の方を中心に、それぞれのペースで学べます。分からないところは、その場で何度でも聞けます。</p>
+    <div class="hero-band">
+      <img src="images/hero-classroom.jpg" alt="教室で学ぶ様子">
+      <img src="images/hero-smartphone.jpg" alt="スマートフォンを操作する手元">
+      <img src="images/hero-pc.jpg" alt="教室でパソコンを操作する様子">
+    </div>
+  </div>
+</div>
+
+<section id="points">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">Features</div>
+      <h2>えーるの5つのポイント</h2>
+    </div>
+
+    <div class="point">
+      <img src="images/point-1.png" alt="授業のイラスト">
+      <div>
+        <h3><span class="num">POINT 1</span>講師による授業・クラス制</h3>
+        <p>ビデオや本を使っての自主学習形式ではなく、講師が授業を進めるクラス制だから、わからないところや質問したいところをすぐに聞いていただけます！</p>
+        <p>毎週受講していただく時間帯が決まっているので、予定も立てやすい。</p>
+        <p>ほかの受講生さんともパソコンを通して親睦が深まるのもクラス制ならでは！季節の折々に、お花見やお食事会、新年会なども開催されるので、楽しく受講していただけます。</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <img src="images/point-2.png" alt="月会費制のイラスト">
+      <div>
+        <h3><span class="num">POINT 2</span>安心の月会費制</h3>
+        <p>お支払い料金は各月ごとの月会費制です（13,500円＋テキスト代）。</p>
+        <p>週1回の授業に加え、授業の振替や再受講（1回）もでき、上記以上の金額をいただくことはありません。</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <img src="images/point-3.png" alt="振替・再受講のイラスト">
+      <div>
+        <h3><span class="num">POINT 3</span>振替・再受講</h3>
+        <p>忙しくて、受講できるかどうか心配・・・そんな方のための安心の受講システム。</p>
+        <p>＜振替＞基本クラスに都合が悪くて出席できない場合、同じ内容を行っている他のクラスがある場合は、そのクラスに振替えて受講していただけます。</p>
+        <p>＜再受講＞過去に受講した授業をもう一度受けられます（再受講は1回）。</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <img src="images/point-4.png" alt="サポートのイラスト">
+      <div>
+        <h3><span class="num">POINT 4</span>メッセージ・電話サポート</h3>
+        <p>内容についていけるか心配・・・そんな方のために、こんなシステムもあります。</p>
+        <p>＜個別サポート＞事前にご相談いただければ個人的な問題にも対応します。町内会の経理・スマホ操作など授業の前や後の空き時間での質問も可能です。</p>
+        <p>＜電話問合せ＞ご自宅で復習していてわからない！エラーメッセージが出て動かない！そんな時はお電話でお問い合わせいただけます（授業中以外の時間）。</p>
+        <p>＜オンライン学習＞Zoomを使った質問対応も可能です（事前申し出のみ）。</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <img src="images/point-5.png" alt="復習のイラスト">
+      <div>
+        <h3><span class="num">POINT 5</span>復習を前提にした授業組み立て</h3>
+        <p>一度ですべてを覚えようと思わなくても大丈夫。「忘れて当たり前」を前提に何度も繰り返すような授業内容にしています。その代わり、学習内容は多岐に渡ります。IT社会を楽しく便利に過ごすための内容です。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="guide" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">Access</div>
+      <h2>教室案内</h2>
+    </div>
+
+    <div class="venue">
+      <h3><img src="images/ill-venue.png" alt="会場のイラスト">シニアスクール村井内（主会場）</h3>
+      <p class="addr">広島県呉市寺本町3-3<br>講習会は水曜日・木曜日・土曜日に開いています。</p>
+      <img class="photo" src="images/classroom-interior.jpg" alt="主会場の教室の様子">
+      <iframe class="map" title="シニアスクール村井内の地図" src="https://www.google.com/maps?q=%E5%B9%83%E5%B3%B6%E7%9C%8C%E5%91%89%E5%B8%82%E5%AF%BA%E6%9C%AC%E7%94%BA3-3&output=embed" loading="lazy"></iframe>
+    </div>
+
+    <div class="venue">
+      <h3>豊まちづくりセンター</h3>
+      <p class="addr">隔週の金曜日、13時から開いています。</p>
+      <iframe class="map" title="豊まちづくりセンターの地図" src="https://www.google.com/maps?q=%E8%B1%8A%E3%81%BE%E3%81%A1%E3%81%A5%E3%81%8F%E3%82%8A%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%20%E5%91%89%E5%B8%82&output=embed" loading="lazy"></iframe>
+    </div>
+
+    <div class="sec-head" style="margin-top:56px;">
+      <h2 style="font-size:24px;">講座の様子</h2>
+      <p>生徒さんとスマホカメラ講座をした時の様子です。</p>
+    </div>
+    <div class="gallery">
+      <img src="images/gallery-1.jpg" alt="スマホカメラ講座の様子1">
+      <img src="images/gallery-2.jpg" alt="スマホカメラ講座の様子2">
+      <img src="images/gallery-3.jpg" alt="スマホカメラ講座の様子3">
+      <img src="images/gallery-4.jpg" alt="スマホカメラ講座の様子4">
+      <img src="images/gallery-5.jpg" alt="スマホカメラ講座の様子5">
+      <img src="images/gallery-6.jpg" alt="スマホカメラ講座の様子6">
+    </div>
+  </div>
+</section>
+
+<section id="fee">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">Fee</div>
+      <h2>料金</h2>
+    </div>
+    <div class="fee-box">
+      <img src="images/ill-fee.png" alt="料金のイラスト">
+      <div class="fee-list">
+        <div class="row"><div class="k">入会料</div><div class="v">5,000円</div></div>
+        <div class="row"><div class="k">月会費</div><div class="v">13,500円</div></div>
+        <div class="row"><div class="k">テキスト代</div><div class="v">実費</div></div>
+      </div>
+    </div>
+    <div class="included">
+      <h3>月会費には、次が含まれます</h3>
+      <ul>
+        <li>月に4回の講習会への参加</li>
+        <li>特別講習への参加</li>
+        <li>SNSやグループLINEでの、セキュリティ情報や緊急情報の共有</li>
+        <li>電話やメッセージでのサポート</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="course" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">Courses</div>
+      <h2>講座内容</h2>
+    </div>
+    <div class="course">
+      <img src="images/ill-smartphone.png" alt="スマホ講座のイラスト">
+      <p>スマホの基本操作と、よく使うアプリの使い方</p>
+    </div>
+    <div class="course">
+      <img src="images/ill-pc.png" alt="パソコン講座のイラスト">
+      <p>パソコンでの文書作成（Word・Excel）</p>
+    </div>
+    <div class="course">
+      <img src="images/ill-postcard.png" alt="年賀状作りのイラスト">
+      <p>Canvaで作る年賀状やチラシ</p>
+    </div>
+    <div class="course">
+      <img src="images/ill-ai.png" alt="AI講座のイラスト">
+      <p>AIの使い方</p>
+    </div>
+    <div class="course">
+      <img src="images/ill-security.png" alt="セキュリティ講座のイラスト">
+      <p>詐欺や情報漏えいから身を守る、セキュリティ対策</p>
+    </div>
+  </div>
+</section>
+
+<section id="instructor">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="en">Instructor</div>
+      <h2>講師紹介</h2>
+    </div>
+    <div class="inst-head">
+      <img src="images/instructor.jpg" alt="講師 井上由美の写真">
+      <div>
+        <div class="name">井上 由美<span class="yomi">いのうえ ゆみ</span></div>
+        <div class="role">シニアITサロンえーる 講師</div>
+      </div>
+    </div>
+    <div class="inst-body">
+      <p>IT講師として16年、延べ1万人以上（推計）の方に、パソコンとスマートフォンの使い方を教えてきました。</p>
+      <p>授業は講師が進めるクラス制で、分からないところはその場で聞いていただけます。「忘れて当たり前」を前提に、何度も繰り返しながら進める授業です。</p>
+    </div>
+    <div class="inst-photos">
+      <figure>
+        <img src="images/lecture-yumi.jpg" alt="講習会で指導する様子">
+        <figcaption>講習会で指導する様子</figcaption>
+      </figure>
+      <figure>
+        <img src="images/lecture-external.jpg" alt="外部講習の様子">
+        <figcaption>外部講習の様子</figcaption>
+      </figure>
+    </div>
+    <div class="career">
+      <img src="images/ill-book.png" alt="経歴のイラスト">
+      <div>
+        <h3>経歴</h3>
+        <p>島根大学大学院 農学研究科を2000年3月に修了。<br>
+        合同会社よーそろの専務執行役員として、WebサイトやSNSの運営など、デジタルの仕事全般も担当しています。<br>
+        着付けの講師（きものすなお認定講師）としても活動中です。<br>
+        えーるの教室のほか、外部の講習会で講師を務めることもあります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="alt">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;">
+      <div class="en">Apply</div>
+      <h2>申し込み</h2>
+    </div>
+    <div class="apply">
+      <img src="images/ill-mail.png" alt="申し込みのイラスト">
+      <p>申し込みはフォームから受け付けています。<br>見学の相談も、フォームからどうぞ。</p>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdOR7V6lVIGOyHAZFvg3BSPB8B1rAujKCPoIDZVn5l9SHzxSA/viewform" target="_blank" rel="noopener">申し込みフォームへ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="fname">シニアITサロンえーる</div>
+  <div class="faddr">呉市寺本町3-3 シニアスクール村井内</div>
+</footer>
+
+</body>
+</html>
