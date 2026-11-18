@@ -133,9 +133,10 @@
   .included li{padding:7px 0 7px 26px;position:relative;border-bottom:1px solid #d8d5cb;}
   .included li:last-child{border-bottom:none;}
   .included li::before{content:"";position:absolute;left:2px;top:17px;width:10px;height:10px;background:var(--red);}
-  .textbook{margin-top:30px;border:2px solid var(--black);padding:18px;display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:center;background:#fff;}
-  .textbook img{width:100%;display:block;}
-  .textbook p{font-size:16px;font-weight:700;line-height:1.9;}
+  .textbook{margin-top:30px;border:2px solid var(--black);padding:18px;background:#fff;}
+  .textbook-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .textbook-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+  .textbook p{font-size:16px;font-weight:700;line-height:1.9;margin-top:16px;}
 
   /* courses */
   .course-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--black);}
@@ -196,7 +197,7 @@
     .gallery{grid-template-columns:1fr 1fr;}
     .gallery img{height:140px;}
     .fee-grid{grid-template-columns:1fr;}
-    .textbook{grid-template-columns:1fr;}
+    .textbook-photos{grid-template-columns:1fr;}
     .fee-cell + .fee-cell{border-left:none;border-top:2px solid var(--black);}
     .course-grid{grid-template-columns:1fr;}
     .course:nth-child(odd){border-right:none;}
@@ -370,7 +371,10 @@
         </ul>
       </div>
       <div class="textbook">
-        <img src="images/textbook-ai-excel.jpg" alt="えーる公式テキスト「AIとExcel」">
+        <div class="textbook-photos">
+          <img src="images/textbook-ai-excel.jpg" alt="えーる公式テキスト「AIとExcel」">
+          <img src="images/textbook-smartphone-camera.jpg" alt="えーる公式テキスト「スマホカメラ」">
+        </div>
         <p>講習会に利用する資料やテキストは、えーる独自開発のものもあります。</p>
       </div>
     </div>
